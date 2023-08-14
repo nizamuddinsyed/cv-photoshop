@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Web 3.0</title>
+
+
+    <!-- Add Open CV -->
+    <script async src="opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Adding Materialm Icons google -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <!-- Add fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <!-- Main page -->
+    <div class="main-page">
+
+        <!-- -------------- Side Line ------------- -->
+        <div class="side-line"></div>
+
+        <!-- ------------- Side Bar -------------  -->
+        <div class="side-bar">
+            <span class="circle" id="button-rgb" title="Apply RGB Effect">
+                <i class="material-icons" style="font-size: 36px; color: #322653;">palette</i>
+
+            </span>
+            <span class="circle" id="button-gray" title="Apply Gray Effect">
+                <i class="material-icons" style="font-size: 36px; color: #322653;">contrast</i>
+
+            </span>
+            <span class="circle" id="button-blur" title="Apply Blur Effect">
+                <i class="material-icons" style="font-size: 36px; color: #322653;">blur_on</i>
+   
+            </span>
+            <span class="circle" id="button-canny" title="Apply Canny Edge Detection">
+                <i class="material-icons" style="font-size: 36px; color: #322653;">grade</i>
+
+            </span>
+            <span class="circle" > <i class="material-icons" style="font-size: 36px; color: #322653;">videocam</i></span>
+        </div>
+
+        <!-- ------------- Right Panel -------------  -->
+        <div class="right-panel">
+
+            <!-- header  -->
+            <div class="header">
+                <div class="empty-"></div>
+                <h1 >Photoshop</h1>
+                <div class="logo-container"><img src="/Template/Niz-Zone-logo.png" alt="" width="220"></div>
+
+            </div>
+
+            <!-- Tablet container  -->
+            <div class="tablet-container">
+                <img id="tablet-image" src="Template/tablet.png" width="1050" height="780" alt="">
+                <canvas id="main-canvas" width="960" height="720">
+                    <img id="img-main" src="Template/test-img.jpg" alt="" width="960" height="720">
+                </canvas>
+            </div>
+        </div>
+
+    </div>
+    <!-- Link to javascript -->
+    <script src="main.js"></script>
+</body>
+</html>
