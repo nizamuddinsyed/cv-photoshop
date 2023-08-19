@@ -45,17 +45,24 @@ body {
     justify-content: center;  /****** Vertical *********/
     align-items: center; /****** Horiznotal *********/
     border-radius: 25%;
-    transition: all 0.1s ease; 
+    border: 3px dashed black;
+    transition-duration: 1s;
+    /* transition: all 0.1s ease;  */
     cursor: pointer;
     
 }
 
 .circle:hover{
     background-color: #504099;
+    border: 3px solid black;
+
+    
 }
 
 .circle:active {
     background-color: #504099;
+
+    
 }
 
 .circle:hover:after {
@@ -67,12 +74,15 @@ body {
     background: #ccc;
     padding: 4px 8px;
     border-radius: 4px;
-    opacity: 0;
-    transition: opacity 0.1s ease; 
+
+    /* opacity: 0; */
+    /* transition: opacity 0.1s ease;  */
   }
 .circle:hover:after {
     opacity: 1;
+
   }
+
 /* Right Pannel */
 .right-panel {
     display: flex;
