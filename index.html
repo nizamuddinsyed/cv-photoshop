@@ -8,6 +8,11 @@
 
 
     <!-- Add Open CV -->
+    <script>
+        function onOpenCvReady() {
+          console.log( 'OpenCV Ready', cv);
+        }
+      </script>
     <script async src="opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
 
     <!-- Link to CSS file -->
@@ -49,7 +54,9 @@
                 <i class="material-icons" style="font-size: 36px; color: #322653;">grade</i>
 
             </span>
-            <span class="circle" > <i class="material-icons" style="font-size: 36px; color: #322653;">videocam</i></span>
+            <span class="circle"  id="button-contour" title="Apply contour effect">
+                <i class="material-icons" style="font-size: 36px; color: #322653;">flip</i>
+            </span>
         </div>
 
         <!-- ------------- Right Panel -------------  -->

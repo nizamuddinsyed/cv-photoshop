@@ -17,7 +17,7 @@ function onOpenCvReady(){
         };
 
 
-        //  ******************* GRAY SCALE BUTTON ********************
+        //  ******************* Gray Scale effect ********************
         document.getElementById("button-gray").onclick = function (){
             let imgMain = cv.imread("img-main");
             let imgGray = imgMain.clone();
@@ -28,7 +28,7 @@ function onOpenCvReady(){
 
         };
 
-        // ********************** BLUR IMAGE ***********************
+        // ********************** Blur Image effect ***********************
         document.getElementById("button-blur").onclick = function (){
             let imgMain = cv.imread("img-main");
             let imgBlur = imgMain.clone();
@@ -41,7 +41,7 @@ function onOpenCvReady(){
             imgBlur.delete();
         };
 
-        // ************************* EDGE *************************
+        // ************************* Edge effect *************************
         document.getElementById("button-canny").onclick = function (){
             let imgMain = cv.imread("img-main");
             let imgCanny = imgMain.clone();
@@ -50,6 +50,29 @@ function onOpenCvReady(){
             cv.imshow("main-canvas",imgCanny);
             imgMain.delete();
             imgCanny.delete();
+        };
+
+        // ************************* Contour effect *************************
+        document.getElementById("button-contour").onclick = function (){
+            let imgMain = cv.imread("img-main");
+            let dst = cv.Mat.zeros(imgMain.rows, imgMain.cols, cv.CV_8UC3);
+
+            // let src = cv.imread('canvasInput');
+            cv.cvtColor(imgMain, imgMain, cv.COLOR_RGBA2GRAY, 0);
+            cv.threshold(imgMain, imgMain, 120, 200, cv.THRESH_BINARY);
+            let contours = new cv.MatVector();
+            let hierarchy = new cv.Mat();
+            cv.findContours(imgMain, contours, hierarchy, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE);
+            for (let i = 0; i < contours.size(); ++i) {
+                let color = new cv.Scalar(Math.round(Math.random() * 255), Math.round(Math.random() * 255),
+                                          Math.round(Math.random() * 255));
+                cv.drawContours(dst, contours, i, color, 1, cv.LINE_8, hierarchy, 100);
+            }
+
+            cv.imshow('main-canvas', dst);
+            imgMain.delete(); dst.delete(); contours.delete(); hierarchy.delete();
+    
+            
         };
 
     };
